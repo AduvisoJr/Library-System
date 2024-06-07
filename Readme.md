@@ -1,6 +1,4 @@
-# Library Management System
-
-
+# BNHS Library Management System
 
 # Programming Language and Tools
 
@@ -22,15 +20,9 @@
 
 # direct link 
 
-https://rajpra786.github.io/Library-Management-System/index.html
+[Website - GitHub](https://aduvisojr.github.io/Library-System/)
 
 ---
 # Contributors
-- ##### Rajendra Prajapat
-- ##### Dheeraj Chaudhary
-- ##### Priya Tiru
-- ##### Rajdeep Das
-- ##### Shashank N S
+- ##### Christopher E. Aduviso Jr.
 
-##### Supervised By- Prof. Channappa B AKKI
-###### Academic Year: 2018-2019
