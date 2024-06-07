@@ -23,6 +23,10 @@
 [Website - GitHub](https://aduvisojr.github.io/Library-System/)
 
 ---
-# Contributors
+
+# This was done on June 7, 2024
+
+---
+# Contributor
 - ##### Christopher E. Aduviso Jr.
 
