@@ -15,8 +15,7 @@ $(document).ready(function() {
 
     db.collection("books").get().then(function(querySnapshot) {
         querySnapshot.forEach(function(doc) {
-            var bookcode = parseInt(doc.data().bookcode, 10);
-            if (bookcode > 1000000) {
+            if (doc.data().bookcode > 1000000) {
                 $('#books').append(
                     "<div><h2>" + doc.data().bookcode + "-" + doc.data().bookname + "</h2>" +
                     "<h3>" + doc.data().author1 + " , " + doc.data().author2 + "</h3>" +
