@@ -31,8 +31,8 @@ $(document).ready(function() {
     // Function to fetch and display books
 db.collection("books").get().then(function(querySnapshot) {
     querySnapshot.forEach(function(doc) {
-        // Check if the book number is over 1 million
-        if (doc.data().bookcode > 1000000) {
+        // Check if the book number is over 10 million
+        if (doc.data().bookcode > 10000000) {
             $('#books').append(
                 "<div><h2>"+doc.data().bookcode+"-" +doc.data().bookname+"</h2>"+
                 "<h3>"+doc.data().author1 + " , " +doc.data().author2 +"</h3>"+
@@ -47,13 +47,13 @@ db.collection("books").get().then(function(querySnapshot) {
 // Function to fetch and display users
 db.collection("users").get().then(function(querySnapshot) {
     querySnapshot.forEach(function(doc) {
+        var rollNumber = doc.data().Roll_Number;
         // Check if the roll number does not start with "BNHS"
-        if (!doc.data().Roll_Number.startsWith("BNHS")) {
-            var book = [];
-            book = doc.data().books;
+        if (rollNumber && !rollNumber.startsWith("BNHS")) {
+            var books = doc.data().books;
             var books_set = "<ul>";
-            for (var i = 0; i < book.length; i++) {
-                books_set = books_set + "<li>" + book[i] + "</li>";
+            for (var i = 0; i < books.length; i++) {
+                books_set = books_set + "<li>" + books[i] + "</li>";
             }
             books_set = books_set + "</ul>";
             $('#users').append(
