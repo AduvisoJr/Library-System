@@ -29,10 +29,11 @@
     // });
 
     // Function to fetch and display books
+// Function to fetch and display books
 db.collection("books").get().then(function(querySnapshot) {
     querySnapshot.forEach(function(doc) {
-        // Check if the book number is over 10 million
-        if (doc.data().bookcode > 10000000) {
+        // Check if the book name starts with "BNHS"
+        if (doc.data().bookname.startsWith("BNHS")) {
             $('#books').append(
                 "<div><h2>"+doc.data().bookcode+"-" +doc.data().bookname+"</h2>"+
                 "<h3>"+doc.data().author1 + " , " +doc.data().author2 +"</h3>"+
@@ -47,9 +48,8 @@ db.collection("books").get().then(function(querySnapshot) {
 // Function to fetch and display users
 db.collection("users").get().then(function(querySnapshot) {
     querySnapshot.forEach(function(doc) {
-        var rollNumber = doc.data().Roll_Number;
-        // Check if the roll number does not start with "BNHS"
-        if (rollNumber > 1000) {
+        // Check if the user name starts with "BNHS"
+        if (doc.data().name.startsWith("BNHS")) {
             var books = doc.data().books;
             var books_set = "<ul>";
             for (var i = 0; i < books.length; i++) {
@@ -67,6 +67,7 @@ db.collection("users").get().then(function(querySnapshot) {
         }
     });
 });
+
 
   
     $("#Students_search").submit(function(e) {
