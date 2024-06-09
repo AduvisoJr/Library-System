@@ -1,4 +1,4 @@
-$(document).ready(function() {
+ $(document).ready(function() {
 
     var firebaseConfig = {
     apiKey: "AIzaSyBin1evT-H6jfR49WIhtVPsGMLzbEklIQY",
@@ -49,7 +49,7 @@ db.collection("users").get().then(function(querySnapshot) {
     querySnapshot.forEach(function(doc) {
         var rollNumber = doc.data().Roll_Number;
         // Check if the roll number does not start with "BNHS"
-        if (rollNumber && !rollNumber.startsWith("BNHS")) {
+        if (rollNumber > 1000) {
             var books = doc.data().books;
             var books_set = "<ul>";
             for (var i = 0; i < books.length; i++) {
