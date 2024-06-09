@@ -16,31 +16,110 @@
     
     <button id="back_button" onclick="location.href='index.html'">Back</button>
 
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentication Form</title>
+    <style>
+        .login-page {
+            width: 360px;
+            padding: 8% 0 0;
+            margin: auto;
+        }
+        .form {
+            position: relative;
+            z-index: 1;
+            background: #FFFFFF;
+            max-width: 360px;
+            margin: 0 auto 100px;
+            padding: 45px;
+            text-align: center;
+            box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+        }
+        .form input {
+            font-family: "Roboto", sans-serif;
+            outline: 0;
+            background: #f2f2f2;
+            width: 100%;
+            border: 0;
+            margin: 0 0 15px;
+            padding: 15px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+        .form button {
+            font-family: "Roboto", sans-serif;
+            text-transform: uppercase;
+            outline: 0;
+            background: #4CAF50;
+            width: 100%;
+            border: 0;
+            padding: 15px;
+            color: #FFFFFF;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        .form button:hover,.form button:active,.form button:focus {
+            background: #43A047;
+        }
+        .form .message {
+            margin: 15px 0 0;
+            color: #b3b3b3;
+            font-size: 12px;
+        }
+        .form .message a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        .form .register-form {
+            display: none;
+        }
+    </style>
+</head>
+<body>
     <div class="login-page">
-          <div class="form">
+        <div class="form">
             <hr>
             <h3>User Authentication</h3>
             <hr>
             <br>
             <form class="register-form">
-              <input type="text" placeholder="name" id="usr_name"/>
-              <input type="password" placeholder="password" id="usr_pass" required/>
-              <input type="text" placeholder="Roll Number" id = "usr_roll" required/>
-              <input type="date" placeholder="dd/mm/yyyy" id = "usr_dob" required/>
-              <input type="email" placeholder="email address" id = "usr_email" required/>
-              <button id="register_new">SIGNUP</button>
-              <p class="message">Already registered? <a href="#">Sign In</a></p>
+                <input type="text" placeholder="name" id="usr_name"/>
+                <input type="password" placeholder="password" id="usr_pass" required/>
+                <input type="text" placeholder="Roll Number" id="usr_roll" required/>
+                <input type="date" placeholder="dd/mm/yyyy" id="usr_dob" required/>
+                <input type="email" placeholder="email address" id="usr_email" required/>
+                <button id="register_new">SIGNUP</button>
+                <p class="message">Already registered? <a href="#">Sign In</a></p>
             </form>
 
             <form class="login-form">
-              <input type="text" placeholder="username" id = "username" required/>
-              <input type="password" placeholder="password" id = "password" required/>
-              <button type="submit" id ="log_me_in" >LOGIN</button>
-              <p class="message">Not registered? <a href="#">Create an account</a></p>
+                <input type="text" placeholder="username" id="username" required/>
+                <input type="password" placeholder="password" id="password" required/>
+                <button type="submit" id="log_me_in">LOGIN</button>
+                <p class="message">Not registered? <a href="#">Create an account</a></p>
             </form>
-
-          </div>
+        </div>
     </div>
+
+    <script>
+        document.querySelectorAll('.message a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector('.register-form').classList.toggle('display');
+                document.querySelector('.login-form').classList.toggle('display');
+            });
+        });
+
+        // Initial state: show login form, hide register form
+        document.querySelector('.login-form').classList.add('display');
+        document.querySelector('.register-form').classList.remove('display');
+    </script>
+</body>
+</html>
+
  
  
     <!-- The core Firebase JS SDK is always required and must be listed first -->
